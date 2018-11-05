@@ -1,0 +1,41 @@
+// Typography and helpers that apply to all pages
+
+body {
+  font-family: "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui",
+  arial, sans-serif;
+  font-size: $font-size-rg;
+  color: $color-dark-blue-gray;
+}
+
+/* typograophy */
+// .f1 and .f2 are tachyon classes, we just extend them
+.f1 {
+  font-weight: bold;
+  font-size: $font-size-ll;
+
+  @include bp(desktop-up) {
+    font-size: $font-size-xl;
+  }
+}
+
+.f2 {
+  font-weight: bold;
+
+  @include bp(desktop-up) {
+    font-size: $font-size-ll;
+  }
+}
+
+.f3 {
+  font-weight: bold;
+  font-size: $font-size-rg;
+
+  @include bp(desktop-up) {
+    font-size: $font-size-ls;
+  }
+}
+
+/* convenience for 'words in a paragraph for a person' */
+.content {
+  line-height: 1.5;
+}

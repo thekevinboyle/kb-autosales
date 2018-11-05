@@ -1,0 +1,33 @@
+// Common variables used everywhere
+// Note that tachyons is also employed which does not regard these values
+
+/* colors */
+$color-gray-1: #cdd1d4;
+$color-lightest-gray: white;
+$color-light-gray-1: #f0f2f3;
+$color-light-gray-2: #9aa0a5;
+$color-brand-green: #28c278;
+$color-brand-green--hover: #2dd484;
+$color-brand-orange: #f07e5e;
+$color-brand-orange--hover: #fd9476;
+$color-brand-blue: #4fc4e6;
+$color-brand-blue--hover: #5dd3f6; // consider lighten sass func here
+$color-dark-blue-gray: #3d4852;
+$color-dark-blue-gray--text: #6d7780;
+
+/* font sizes */
+$font-size-xs: 14px; // small
+$font-size-rg: 16px; // regular
+$font-size-ls: 18px; // large-ish
+$font-size-lg: 20px; // large
+$font-size-ll: 30px; // larger
+$font-size-xl: 54px; // x-large
+
+/* spacing & proportion */
+$form-control-height-large: 44px;
+$gutter-width: 20px;
+$moat-width: $gutter-width * 2;
+
+/* anims */
+$transition-1: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+

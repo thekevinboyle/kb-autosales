@@ -1,0 +1,178 @@
+/* Car Collection Component */
+.car-coll {
+  padding: $moat-width;
+  // min-height: 360px;
+  display: flex;
+  align-items: center;
+  border-top: 1px $color-light-gray-1 solid;
+
+  @include bp(tablet-portrait-up) {
+    border-top: 0;
+  }
+}
+
+.car-coll__car-item {
+  position: relative;
+}
+
+// Grid positions for car collection description
+.car-coll__desc {
+  grid-column: 1 / 17;
+
+  @include bp(tablet-portrait-up) {
+    align-items: center;
+  }
+}
+
+// Grid positions for car items on phone
+.car-coll__car-item {
+  // first car item grid position
+  &.first {
+    grid-column: 1 / 9;
+  }
+  // second car item grid position
+  &.second {
+    grid-column: 9 / 17;
+  }
+}
+
+// Car Collection Component's position-driven style variants to make things look interesting per psd
+.car-coll {
+  /* 1, 3, etc */
+  @include bp(tablet-portrait-up) {
+    &:nth-child(odd) {
+      background-color: $color-light-gray-1;
+      .car-coll__desc {
+        grid-column: 1 / 9;
+      }
+      .car-coll__car-item {
+          &.first {
+            grid-column: 9 / 13;
+          }
+          &.second {
+            grid-column: 13 / 17;
+          }
+        }
+      }
+
+      &:nth-child(even) {
+        background-color: $color-lightest-gray;
+        .car-coll__desc {
+          grid-column: 9 / 17;
+        }
+        .car-coll__car-item {
+          order: -1;
+          &.first {
+            grid-column: 1 / 5;
+          }
+          &.second {
+            grid-column: 5 / 9;
+          }
+        }
+      }
+    }
+}
+
+.car-coll__meta {
+  @include bp(desktop-up) {
+    color: $color-lightest-gray;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: transparentize($color-dark-blue-gray, 0.2);
+  }
+}
+
+.car-coll__meta-inner {
+  width: calc(100% - #{$gutter-width * 2});
+}
+
+.car-coll__title {
+  margin-top: 10px;
+  margin-bottom: 3px;
+
+  @include bp(desktop-up) {
+    flex-basis: 100%;
+    width: 100%;
+    display: inline-block;
+    margin: 0;
+
+    &:after {
+      content: "";
+      display: inline-block;
+      background-color: $color-lightest-gray;
+      transition: $transition-1; // subtle animation
+      width: 80%; // see anim (a1) for end state
+      height: 2px;
+      margin-bottom: 10px;
+      margin-top: 12px;
+    }
+  }
+}
+
+.car-coll__link {
+  @extend .nav-link;
+  display: flex;
+  width: 100%;
+  flex-basis: 100%;
+  align-items: center;
+
+  opacity: 0.6;
+  &:hover {
+    opacity: 1;
+    color: $color-brand-blue;
+  }
+
+  // ex
+  &:after {
+    content: "";
+    display: inline-block;
+    height: 6px;
+    width: 10px;
+    background-image: url(https://s3-us-west-2.amazonaws.com/mockup-homework-assets/select-arrow-down-dark.svg);
+    margin-left: 2px;
+    transition: $transition-1; // ex
+    transition-duration: 0.1s; // ex
+    transform: translateX(0) rotate(-90deg); // ex
+    opacity: 0.7;
+  }
+  &:hover:after {
+    transform: translateX(3px) rotate(-90deg); // ex
+  }
+
+  @include bp(desktop-up) {
+    display: inline-block;
+    opacity: 1;
+    color: $color-lightest-gray;
+    &:after {
+      display: none;
+    }
+  }
+}
+
+/* anims */
+.car-coll__car__anim-on-hover {
+  @include bp(desktop-up) {
+    .car-coll__meta {
+      transition: $transition-1;
+      opacity: 0;
+
+      &:hover {
+        opacity: 1;
+
+        /* a1 */
+        .car-coll__title:after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+

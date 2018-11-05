@@ -1,0 +1,33 @@
+/* inputs */
+
+/* A select element which has been styled. If other dropdowns are styled differently elsewhere, this would be divided into more than one class, but for now this is what we have */
+.dropdown {
+  -webkit-appearance: none; // in a fuller setup we'd be doing autoprefixer instead of manual like this
+  align-items: center;
+  background-image: url(https://s3-us-west-2.amazonaws.com/mockup-homework-assets/select-arrow-down-light.svg);
+  background-position: 97%;
+  background-repeat: no-repeat;
+  background-size: 10px auto;
+  border-radius: 0;
+  border: $color-gray-1 2px solid;
+  box-shadow: none;
+  color: $color-light-gray-2;
+  display: inline-flex;
+  font-size: 1rem;
+  height: $form-control-height-large;
+  justify-content: flex-start;
+  outline: none; // for mockups only, IRL this is bad for accessibility
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  transition: $transition-1;
+  transition-property: border, color;
+  vertical-align: top;
+
+  // To reliably down a dropdown 'icon' we have to overload background, and same for hover state
+  &:hover {
+    background-image: url(https://s3-us-west-2.amazonaws.com/mockup-homework-assets/select-arrow-down-dark.svg);
+    border-color: $color-dark-blue-gray;
+  }
+}
+

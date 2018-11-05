@@ -1,0 +1,59 @@
+/* Drill Down (four across dropdowns) */
+.drill-down-nav {
+  align-items: center;
+  background-color: $color-lightest-gray;
+  display: flex;
+  padding: $moat-width;
+
+  @include bp(desktop-up) {
+    // hit the psd reqs but on responsive, this parent is driven by content height
+    padding: 0;
+    height: 100px;
+  }
+}
+
+// Lay out this section in a way that looks more natural
+// for the screen width we are currently in
+.drill-down-nav-inner {
+  flex-basis: 100%;
+  grid-column-gap: $gutter-width;
+  grid-template-columns: repeat(3, 1fr);
+
+  // For phones, drilldown buttons are stacked and wide
+  grid-template-areas:
+  "make make make"
+  "model model model"
+  "price price price"
+  "btn btn btn";
+
+  // For tablets, 3 selection dropdowns and one large button beneath
+  @include bp(tablet-portrait-up) {
+    grid-template-areas:
+    "make model price"
+    "btn btn btn";
+  }
+
+  // For desktop and above. See psd
+  @include bp(desktop-up) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+    "make model price btn";
+  }
+}
+
+.choose-make {
+  grid-area: make;
+}
+
+.choose-model {
+  grid-area: model;
+}
+
+.choose-price{
+  grid-area: price;
+}
+
+.find-car-btn {
+  grid-area: btn;
+}
+

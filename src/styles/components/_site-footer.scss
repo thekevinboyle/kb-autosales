@@ -1,0 +1,40 @@
+
+.site-footer {
+  align-items: flex-start;
+  padding-top: $gutter-width;
+  color: $color-dark-blue-gray--text;
+
+  @include bp(desktop-up) {
+    padding-top: 0;
+    align-items: center;
+  }
+}
+
+.footer-meta {
+  margin-bottom: $gutter-width;
+  line-height: 2;
+  text-align: right;
+
+  @include bp(desktop-up) {
+    text-align: left;
+    margin: 0; // on desktop for parent we have a static height and margins makes parent taller than designed, therefore we remove margins only on desktop up
+    line-height: 1;
+  }
+}
+
+.footer-meta-item {
+  // Put a separator after every child exept for last child
+  font-size: $font-size-xs;
+  font-weight: bold;
+
+  @include bp(desktop-up) {
+    display: inline-block;
+
+    &:not(:last-child):after {
+      content: "|";
+      display: inline-block;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+}

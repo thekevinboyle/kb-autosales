@@ -1,0 +1,20 @@
+@import '../node_modules/tachyons/css/tachyons.css'; // these helpers allow us to keep things more liquid and variable until final designs are signed off on
+@import '../node_modules/nanoreset/nanoreset.css'; // smooth out browser style bumps
+
+@import 'styles/base/reset'; // project-specific resets
+@import 'styles/base/variables'; // common values used all over app
+@import 'styles/base/breakpoints'; // defines a mixin for nicer syntax with media queries
+@import 'styles/base/forms'; // any form elements in the site (not many rn)
+@import 'styles/base/typography'; // common text-mutating patterns
+
+// Because this is a mockup, elements aren't literally developed into components yet, however it's
+// good to think about what would be the site's components eventually and organize the style accordingly
+@import 'styles/components/animation'; // this would eventually be a center for usability-enhancing movement
+@import 'styles/components/shared'; // stuff used by many different components of site
+@import 'styles/components/site-nav';  // layer at top of site that helps one navigate
+@import 'styles/components/hero'; // the lead-in
+@import 'styles/components/drill-down'; // a psuedo drilldown with dimensions of Make, Model, Price
+@import 'styles/components/car-collection'; // where the car-specific content lives
+@import 'styles/components/site-footer'; // layer at bottom of site with tertiary info
+@import 'styles/components/buttons'; // core button behaviors and major variants
+
