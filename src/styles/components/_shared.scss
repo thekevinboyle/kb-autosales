@@ -18,6 +18,7 @@
 .logo {
   align-items: center;
   color: $color-lightest-gray;
+  cursor: pointer; /* to imply that this takes us home */
   display: flex;
   font-size: 24px;
   font-weight: bold;
