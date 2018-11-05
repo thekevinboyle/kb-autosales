@@ -1,5 +1,5 @@
 .hero {
-  background-image: url("https://picsum.photos/800/800");
+  background-image: url("https://s3-us-west-2.amazonaws.com/mockup-homework-assets/hero-bg.png");
   background-position: center center;
   background-size: cover;
   padding: $moat-width;
@@ -15,5 +15,10 @@
 
 .hero-verbiage {
   grid-column: 1 / 12;
+
+  @include bp(desktop-up) {
+
+  grid-column: 1 / 11;
+  }
 }
 
